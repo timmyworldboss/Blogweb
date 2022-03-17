@@ -9,7 +9,7 @@ class UserModelTest(unittest.TestCase):
         '''
         Setup function that instanciates user
         '''
-        self.new_user = User(password = 'maembe')
+        self.new_user = User(password = 'mavella')
 
     def test_password_setter(self):
         '''
