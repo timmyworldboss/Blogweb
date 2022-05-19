@@ -42,27 +42,27 @@ def login():
 def signup():
     '''
     View function that handles user registration
-    '''
-    if current_user.is_authenticated:
-        '''
-        logic that validates user session
-        '''
-        return redirect(url_for('index'))
-    title = 'Register'
-    form = RegisterForm()
-    if form.validate_on_submit():
-        print('start')
-        admin = Admin(username=form.username.data, email=form.email.data)
-        admin.set_password(form.password.data)
-        db.session.add(admin)
-        db.session.commit()
-        flash('Welcome a board')
-        return redirect(url_for('main.createblog'))
-    else: 
-        print(form.data)
-        print('Not working yet')
-    print(request.method)
-    return render_template('auth/signup.html', title=title, form=form)
+    # '''
+    # if current_user.is_authenticated:
+    #     '''
+    #     logic that validates user session
+    #     '''
+    #     return redirect(url_for('index'))
+    # title = 'Register'
+    # form = RegisterForm()
+    # if form.validate_on_submit():
+    #     print('start')
+    #     admin = Admin(username=form.username.data, email=form.email.data)
+    #     admin.set_password(form.password.data)
+    #     db.session.add(admin)
+    #     db.session.commit()
+    #     flash('Welcome a board')
+    #     return redirect(url_for('main.createblog'))
+    # else: 
+    #     print(form.data)
+    #     print('Not working yet')
+    # print(request.method)
+    # return render_template('auth/signup.html', title=title, form=form)
 
 
 @auth.route('/logout')
