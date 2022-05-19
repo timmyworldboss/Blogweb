@@ -18,17 +18,17 @@ def login():
         Redirects logged in user to home page
         '''
         return redirect(url_for('main.createblog'))
-    form = LoginForm()
-    title = 'LogIn'
-    if form.validate_on_submit():
-        admin = Admin.query.filter_by(username=form.username.data).first()
-        print(admin)
-        if admin is None or not admin.check_password(form.password.data):
-            '''
-            Condition to handle invalid user input
-            Returns:
-                Invalid response retains user on login page to enable them try again
-                Valid reponse redirects user to the authorized home page
+    # form = LoginForm()
+    # title = 'LogIn'
+    # if form.validate_on_submit():
+    #     admin = Admin.query.filter_by(username=form.username.data).first()
+    #     print(admin)
+    #     if admin is None or not admin.check_password(form.password.data):
+    #         '''
+    #         Condition to handle invalid user input
+    #         Returns:
+    #             Invalid response retains user on login page to enable them try again
+    #             Valid reponse redirects user to the authorized home page
             '''
             flash('Invalid username or password')
             return redirect( url_for('auth.login'))
