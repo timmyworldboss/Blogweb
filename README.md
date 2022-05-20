@@ -32,7 +32,7 @@ mkvirtualenv virtual
     SECRET_KEY=
     DATABASE_URL=
     ```
-* Start the flask server
+* Start the flask server.
 ```bash
 (Virtual)$ flask run
 ```
